@@ -16,7 +16,7 @@ export default function useCreate() {
         try {
             setLoadingSubmit(true);
             const payload = { ...formValues, cover: fileItem };
-            await axios.post('http://localhost:3000/api/books', payload, {
+            await axios.post('https://app-server-xkq7x2rzoa-uc.a.run.app/api/books', payload, {
                 headers: {
                     Authorization: localStorage.getItem('token'),
                 },
@@ -37,11 +37,15 @@ export default function useCreate() {
                 const formData = new FormData();
                 formData.append('cover', files[0]);
 
-                const response = await axios.post('http://localhost:3000/api/books/upload', formData, {
-                    headers: {
-                        Authorization: localStorage.getItem('token'),
-                    },
-                });
+                const response = await axios.post(
+                    'https://app-server-xkq7x2rzoa-uc.a.run.app/api/books/upload',
+                    formData,
+                    {
+                        headers: {
+                            Authorization: localStorage.getItem('token'),
+                        },
+                    }
+                );
                 setFileItem(response.data.data);
             } catch (error) {
                 console.log('error > ', error);

@@ -12,7 +12,7 @@ export function useDetail(id: string) {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:3000/api/books/${id}`);
+                const response = await axios.get(`https://app-server-xkq7x2rzoa-uc.a.run.app/api/books/${id}`);
                 setFileItem(response.data.data.cover);
                 setBook(response.data.data);
             } catch (error) {

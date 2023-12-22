@@ -4,7 +4,7 @@ import { IBooks } from '../books.types';
 import { IApiResponse, IMeta, IParams } from '../../../services/types';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:3000/api/books';
+const API_BASE_URL = 'https://app-server-xkq7x2rzoa-uc.a.run.app/api/books';
 
 export default function useList() {
     const navigate = useNavigate();
